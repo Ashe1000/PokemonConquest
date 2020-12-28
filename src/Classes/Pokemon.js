@@ -15,6 +15,7 @@ export default class Pokemon {
 		name = name.substr(0, 10);
 		this._buf.write(name, 0x0, 0xA, 'ascii')
 	}
+	/* national dex id */
 	get natID() {
 		return this._buf.readUInt16LE(0x12) >>> 6
 	}
@@ -23,6 +24,7 @@ export default class Pokemon {
 		id = id << 6;
 		this._buf.writeUInt16LE(id | base, 0x12);
 	}
+	
 	get ability() {
 		let abilities = [];
 		let group = this._buf.readUInt32LE(0x18);

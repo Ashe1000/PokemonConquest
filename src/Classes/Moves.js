@@ -11,6 +11,7 @@ export default class Move {
 		//change to shift-jis
 		this._buf.write(name, 0x0, 0xA, 'ascii')
 	}
+	//here is where we should put the stuff from /Managers/MovesManager
 	get movement() {
 		
 	}
