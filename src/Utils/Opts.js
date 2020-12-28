@@ -1,4 +1,4 @@
-let defaultOpts = {
+export default {
 	pokemon: {
 		//Done
 		enabled: true,
@@ -56,4 +56,3 @@ let defaultOpts = {
 	basePath: './fsroot/',
 	savePath: './patched/'
 }
-module.exports = defaultOpts;

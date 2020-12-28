@@ -1,4 +1,4 @@
-module.exports = class ScenarioPokemon {
+export default class ScenarioPokemon {
 	constructor(buf) {
 		this._buf = buf;
 	}

@@ -1,5 +1,5 @@
-const ScenarioPokemonManager = require('./ScenarioPokemonManager.js');
-module.exports = class ScenariosPKMNManager {
+import ScenarioPokemonManager from './ScenarioPokemonManager.js';
+export default class ScenariosPKMNManager {
 	constructor(options) {
 		this.options = options;
 		let sc = this.Scenarios = [];

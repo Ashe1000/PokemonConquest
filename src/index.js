@@ -1,10 +1,13 @@
-const options = require('./Utils/Opts.js');
+import options from './Utils/Opts.js';
 
-const ScenarioPokemonRandomizer = require('./Randomizers/ScenarioPokemon.js');
-const PokemonRandomizer = require('./Randomizers/Pokemon.js');
+import abilManager from './Managers/AbilityManager.js';
+import scenarioPKMNManager from './Managers/ScenariosPKMNManager.js';
 
-const AbilityManager = new (require('./Managers/AbilityManager.js'))(options);
-const ScenariosPKMNManager = new (require('./Managers/ScenariosPKMNManager.js'))(options);
+import ScenarioPokemonRandomizer from './Randomizers/ScenarioPokemon.js';
+import PokemonRandomizer from './Randomizers/Pokemon.js';
+
+const AbilityManager = new abilManager(options);
+const ScenariosPKMNManager = new scenarioPKMNManager(options);
 
 const Managers = {
 	AbilityManager,

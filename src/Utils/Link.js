@@ -1,4 +1,4 @@
-module.exports = class Link {
+export default class Link {
 	constructor(buf) {
 		this._buf = buf
 		this.fileCount = buf.readUInt32LE(0x4);

@@ -1,7 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const Ability = require('../Classes/Ability.js');
-const Manager = require('../Classes/BaseManager.js');
+import fs from 'fs';
+import path from 'path';
+
+import Ability from '../Classes/Ability.js';
+import Manager from '../Classes/BaseManager.js';
+
 module.exports = class AbilManager extends Manager {
 	constructor(options) {
 		super(options);

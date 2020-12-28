@@ -1,4 +1,4 @@
-class Move {
+export default class Move {
 	constructor(buf) {
 		this._buf = buf;
 	}

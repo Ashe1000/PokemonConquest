@@ -1,9 +1,9 @@
-const BaseRandomizer = require('../Classes/BaseRandomzier.js');
-const Link = require('../Utils/Link.js');
-const Info = require('../Utils/Info.js');
-const Pokemon = require('../Classes/Pokemon.js');
-const { shuffleArr } = require('../Utils/Utils.js');
-const FatSection = require('../Utils/FatSection.js')
+import BaseRandomizer from '../Classes/BaseRandomzier.js';
+import Link from '../Utils/Link.js';
+import Info from '../Utils/Info.js';
+import Pokemon from '../Classes/Pokemon.js';
+import { shuffleArr } from '../Utils/Utils.js';
+import FatSection from '../Utils/FatSection.js';
 //patches the sound for the randomized pokemon
 function patchSDAT(buf, shuffled) {
 	let fatOffset = buf.readUInt32LE(0x10);
@@ -44,7 +44,7 @@ function patchSDAT(buf, shuffled) {
 	//1325 - end
 }
 
-module.exports = class PokemonRandomizer extends BaseRandomizer {
+export default class PokemonRandomizer extends BaseRandomizer {
 	setup() {
 		this.startPKMN = 0;
 		this.type = 'pokemon';

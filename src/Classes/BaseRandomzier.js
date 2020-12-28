@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Manager = require('./BaseManager.js');
-module.exports = class BaseRandomizer extends Manager {
+export default class BaseRandomizer extends Manager {
 	constructor(options, Managers) {
 		super(options);
 		this.setup();

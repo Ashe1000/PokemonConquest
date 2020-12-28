@@ -1,4 +1,4 @@
-module.exports = class Info {
+export default class Info {
 	constructor(buf) {
 		this._buf = buf;
 		this.fileCount = buf.readUInt32LE(0x0);

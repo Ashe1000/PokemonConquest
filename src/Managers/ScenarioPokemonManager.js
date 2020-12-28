@@ -1,6 +1,7 @@
-const BaseManager = require('../Classes/BaseManager.js');
-const ScenarioPokemon = require('../Classes/ScenarioPokemon.js');
-module.exports = class ScenerioPokemonManager extends BaseManager {
+import BaseManager from '../Classes/BaseManager.js';
+import ScenarioPokemon from '../Classes/ScenarioPokemon.js';
+
+export default class ScenerioPokemonManager extends BaseManager {
 	constructor(options, number) {
 		super(options);
 		this.filename = `/data/Scenario/Scenario${number > 9 ? number : `0${number}`}/ScenarioPokemon.dat`;

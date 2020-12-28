@@ -1,7 +1,7 @@
 let types = ['normal', 'fire', 'water', 'electric', 'grass', 'ice', 'fighting',
 'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dragon',
 'dark', 'steel'];
-module.exports = class Pokemon {
+export default class Pokemon {
 	static types = types;
 	constructor(buf) {
 		this._buf = buf;

@@ -1,4 +1,4 @@
-module.exports = class FatSection {
+export default class FatSection {
 	constructor(buf) {
 		this._buf = buf;
 		this.data = {

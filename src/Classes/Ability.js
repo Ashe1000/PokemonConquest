@@ -1,9 +1,8 @@
-module.exports = class Ability {
+export default class Ability {
 	constructor(buf) {
 		this._buf = buf;
 	}
 	get name() {
-		//no tghis is shiftjis
 		return this._buf.toString('ascii', 0x0, 0xF)
 	}
 	set name(name) {
