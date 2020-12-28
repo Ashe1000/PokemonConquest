@@ -1,0 +1,2 @@
+# ConquestRandomizer
+ pokemon conquest randomzier
