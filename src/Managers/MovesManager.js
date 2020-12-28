@@ -68,7 +68,7 @@ let findXY = val => {
 		faceSize / Math.PI*Math.asin(Math.sin(Math.PI/faceSize*a));
 	if(face % 2) {
 		let mult = (face - 3) / 2 || 1;
-		return [mult * layer, mult * Math.round(triangleWave(n - permiter - layer - 1)) | 0]
+		return [mult * layer | 0, mult * Math.round(triangleWave(n - permiter - layer - 1)) | 0]
 	}
 	let mult = -face / 2 || 1;
 	return [mult * Math.round(triangleWave(n - permiter - layer - 1)) | 0, mult * layer]
