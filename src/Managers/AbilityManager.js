@@ -4,7 +4,7 @@ import path from 'path';
 import Ability from '../Classes/Ability.js';
 import Manager from '../Classes/BaseManager.js';
 
-module.exports = class AbilManager extends Manager {
+export default class AbilManager extends Manager {
 	constructor(options) {
 		super(options);
 		this.reload(this.readFile('/data/Tokusei.dat'));
