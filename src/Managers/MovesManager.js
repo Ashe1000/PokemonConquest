@@ -45,7 +45,7 @@ let findXY = val => {
 	//get the area of the layer under this one
 	let offset = (layer * 2 - 1) ** 2;
 	//get the amount of points on the layer
-	let permiter = layer * 8;
+	let perimeter = layer * 8;
 	
 	/*
 		get the amount of positions on a face (faces are oriented like this)
@@ -58,20 +58,20 @@ let findXY = val => {
 	/*
 	offset the input by the area of the prev layer
 	*/
-	let n = (val - offset + layer + 1) % permiter;
+	let n = (val - offset + layer + 1) % perimeter;
 
-	let faceThing = permiter - n;
+	let faceThing = perimeter - n;
 	// get what face the number is on (face number is changed by 1 so math works out better)
 	let face = ((faceThing / faceSize | 0) + 1) % 4;
-	//return [face, n, faceThing, faceSize, permiter]
+	//return [face, n, faceThing, faceSize, perimeter]
 	let triangleWave = a =>
-		faceSize / Math.PI*Math.asin(Math.sin(Math.PI/faceSize*a));
+		faceSize / Math.PI * Math.asin(Math.sin(Math.PI / faceSize * a));
 	if(face % 2) {
 		let mult = (face - 3) / 2 || 1;
-		return [mult * layer | 0, mult * Math.round(triangleWave(n - permiter - layer - 1)) | 0]
+		return [mult * layer | 0, mult * Math.round(triangleWave(n - perimeter - layer - 1)) | 0]
 	}
 	let mult = -face / 2 || 1;
-	return [mult * Math.round(triangleWave(n - permiter - layer - 1)) | 0, mult * layer]
+	return [mult * Math.round(triangleWave(n - perimeter - layer - 1)) | 0, mult * layer]
 }
 
 //goes from (x,y) -> knockback value
