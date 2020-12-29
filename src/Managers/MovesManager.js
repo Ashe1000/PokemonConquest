@@ -60,18 +60,16 @@ let findXY = val => {
 	*/
 	let n = (val - offset + layer + 1) % perimeter;
 
-	let faceThing = perimeter - n;
 	// get what face the number is on (face number is changed by 1 so math works out better)
-	let face = ((faceThing / faceSize | 0) + 1) % 4;
-	//return [face, n, faceThing, faceSize, perimeter]
-	let triangleWave = a =>
-		faceSize / Math.PI * Math.asin(Math.sin(Math.PI / faceSize * a));
+	let face = (((perimeter - n) / faceSize | 0) + 1) % 4;
+	//calculate the triangle wave stuff
+	let triWave = Math.round(faceSize / Math.PI * Math.asin(Math.sin(Math.PI / faceSize * (n - perimeter - layer - 1))));
 	if(face % 2) {
 		let mult = (face - 3) / 2 || 1;
-		return [mult * layer | 0, mult * Math.round(triangleWave(n - perimeter - layer - 1)) | 0]
+		return [mult * layer | 0, mult * triWave | 0]
 	}
 	let mult = -face / 2 || 1;
-	return [mult * Math.round(triangleWave(n - perimeter - layer - 1)) | 0, mult * layer]
+	return [mult * triWave | 0, mult * layer]
 }
 
 //goes from (x,y) -> knockback value
